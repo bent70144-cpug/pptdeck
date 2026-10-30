@@ -25,6 +25,22 @@ Central, continuously updated record of all development activities, modification
 
 ---
 
+#### [2026-10-30 16:20] — Install Matt Pocock agent skills package (38 skills) via `skills` CLI
+
+- **Type:** Configuration
+- **Description:** Installed the full agent-skills package from `github.com/mattpocock/skills` using the Vercel Labs `skills` CLI (npm package `skills` v1.7.4) with non-interactive flags: `npx skills add mattpocock/skills -s '*' -y`. All 38 skills were installed at project level into the canonical `.agents/skills/` store (universal format readable by Amp, Antigravity, Cline, Codex and 17+ other agents; none symlinked elsewhere since no other agent directories exist in this environment), and a `skills-lock.json` lockfile (v1, per-skill source path + hash) was created at the repo root. Skills include engineering workflows (`code-review`, `codebase-design`, `diagnosing-bugs`, `domain-modeling`, `implement`, `implement-spec`, `tdd`, `to-spec`, `to-tickets`, `triage`, `pr`, `research`, `retro`, `prototype`, `improve-codebase-architecture`, `grill-with-docs`, `setup-ts-deep-modules`, `setup-pre-commit`), interaction/meta skills (`ask-matt`, `grilling`, `grill-me`, `wait-what`, `teach`, `handoff`, `claude-handoff`, `wayfinder`, `wizard`, `loop-me`, `chief-of-staff`), writing skills (`writing-beats`, `writing-fragments`, `writing-shape`, `writing-for-agents`, `to-questionnaire`), and utilities (`git-guardrails-claude-code`, `migrate-to-shoehorn`, `scaffold-exercises`, `setup-matt-pocock-skills`). Note: the first attempt without flags hung on the CLI's interactive skill picker and was aborted; the flag-based invocation completed cleanly.
+- **Reason:** User requested `npx skills add mattpocock/skills`; these skills provide reusable, documented agent workflows (spec-driven implementation, TDD, code review, debugging diagnosis, technical writing) for future development on this repository.
+- **Files Affected:**
+  - `.agents/skills/` (created — 38 skill directories, each containing `SKILL.md` plus optional `agents/openai.yaml`, `scripts/`, and reference docs)
+  - `skills-lock.json` (created — lockfile enabling `skills experimental_install` to restore the exact set)
+- **Impact:** No runtime/build behavior of DeckCraft itself is affected; the repository gains an in-repo agent-skills library that AI coding agents can discover and use during development. Repository file count grows by ~100 files.
+- **Testing:** Verified 38/38 skill directories contain a `SKILL.md`; parsed `skills-lock.json` (valid JSON, v1 schema, sources pinned to `mattpocock/skills`); `npx skills ls` lists all installed skills ("Source: mattpocock/skills"); `git status` shows only the two expected additions.
+- **Status:** Completed
+- **GitHub Sync:** Pending (push to be executed immediately after this entry is committed)
+- **Commit:** (this change's commit — hash to be recorded in the follow-up log update once pushed and verified)
+
+---
+
 #### [2026-10-30 16:01] — Establish project change log (`log.md`)
 
 - **Type:** Documentation
