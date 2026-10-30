@@ -35,8 +35,8 @@ Central, continuously updated record of all development activities, modification
 - **Impact:** No runtime behavior change; adds a documentation and process baseline for the repository.
 - **Testing:** Verified file renders as valid Markdown; verified all bootstrap facts (commit hash, branch, remote URL) against `git log` and `git ls-remote` output.
 - **Status:** Completed
-- **GitHub Sync:** Synced
-- **Commit:** N/A (bootstrap commit introducing `log.md` — see `git log -1` on `main`)
+- **GitHub Sync:** Synced (verified via `git ls-remote`: `main` = `343ab6dc`)
+- **Commit:** `343ab6dc` (introduces `log.md`; hash recorded in follow-up entry update)
 
 ---
 
