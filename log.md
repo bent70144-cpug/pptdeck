@@ -36,8 +36,8 @@ Central, continuously updated record of all development activities, modification
 - **Impact:** No runtime/build behavior of DeckCraft itself is affected; the repository gains an in-repo agent-skills library that AI coding agents can discover and use during development. Repository file count grows by ~100 files.
 - **Testing:** Verified 38/38 skill directories contain a `SKILL.md`; parsed `skills-lock.json` (valid JSON, v1 schema, sources pinned to `mattpocock/skills`); `npx skills ls` lists all installed skills ("Source: mattpocock/skills"); `git status` shows only the two expected additions.
 - **Status:** Completed
-- **GitHub Sync:** Pending (push to be executed immediately after this entry is committed)
-- **Commit:** (this change's commit — hash to be recorded in the follow-up log update once pushed and verified)
+- **GitHub Sync:** Synced (verified via `git ls-remote`: `main` = `34477742`)
+- **Commit:** `34477742`
 
 ---
 
